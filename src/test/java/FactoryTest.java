@@ -23,11 +23,10 @@ public class FactoryTest {
     public void testWithOptions() throws Exception {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
-        //options.setHeadless(true);
+        options.setHeadless(true);
         log.info(System.getProperty("browser"));
 
-        //String browser = System.getProperty("browser");
-        String browser = "cHrOmE";
+        String browser = System.getProperty("browser");
 
         WebDriver wd = WebDriverFactory.createNewDriver(browser, options);
         wd.get("http://www.google.com/");
